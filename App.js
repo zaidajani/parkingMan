@@ -1,20 +1,24 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { HomeComponent } from "./src/features/home/screen/home.screen";
+import {
+  useFonts,
+  Karla_500Medium,
+  Karla_300Light,
+} from "@expo-google-fonts/karla";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { SafeAreaView as SafeArea, Text } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome5 } from '@expo/vector-icons';
+import { Navigation } from "./src/infrastructure/navigation/index";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({ Karla_500Medium });
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <>
+      <Navigation />
       <StatusBar style="auto" />
-    </View>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
