@@ -78,10 +78,10 @@ export const ParkingDetail = () => {
       </Map>
       <TitleContainer>
         <Title>Your recent parking location</Title>
-        <TouchableOpacity onPress={() => null}>
           <ButtonContainer>
             <LesButons
               mode="outlined"
+              color="blue"
               onPress={() => console.log("Pressed")}
             >
               Direction
@@ -95,7 +95,6 @@ export const ParkingDetail = () => {
               Delete
             </LesButons>
           </ButtonContainer>
-        </TouchableOpacity>
         <TeslaImage
           source={{
             uri: "https://cdn-www.pod-point.com/model-3-21-white-background.jpg?mtime=20210128110324&focal=none",
