@@ -26,13 +26,13 @@ const Title = styled.Text`
   text-align: center;
 `
 
-export const CardComponent = () => {
+export const CardComponent = ({ imgUri }) => {
   return (
     <InfoCard elevation={5}>
       <View>
         <InfoCardCover
           key="parking-location"
-          source={{ uri: "https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/topshot_72.jpg" }}
+          source={{ uri: imgUri }}
         />
       </View>
       <Info>

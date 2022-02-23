@@ -84,7 +84,7 @@ export const ParkingDetail = () => {
               color="blue"
               onPress={() => console.log("Pressed")}
             >
-              Direction
+              Directions
             </LesButons>
             <Spacer />
             <LesButons
