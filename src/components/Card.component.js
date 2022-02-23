@@ -43,3 +43,16 @@ export const CardComponent = () => {
     </InfoCard>
   );
 };
+
+export const JustImage = () => {
+  return (
+    <InfoCard elevation={5}>
+      <View>
+      <InfoCardCover
+          key="parking-location"
+          source={{ uri: "https://static.bhphotovideo.com/explora/sites/default/files/styles/top_shot/public/topshot_72.jpg" }}
+        />
+      </View>
+    </InfoCard>
+  )
+}

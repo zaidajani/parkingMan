@@ -1,12 +1,11 @@
 import React from "react";
-import { Text, Image, FlatList, StyleSheet, SafeAreaView } from "react-native";
-import { View } from "react-native-web";
+import { Image, FlatList, SafeAreaView, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import { CardComponent } from "../../../components/Card.component";
 
 const Spacer = styled.View`
   height: 15px;
-`
+`;
 
 const HomeFlatlistWrapper = styled.View`
   height: 450px;
@@ -15,7 +14,6 @@ const HomeFlatlistWrapper = styled.View`
 const BikeImage = styled(Image)`
   width: 130px;
   height: 70px;
-
 `;
 
 const BikeWrapper = styled.View`
@@ -34,26 +32,29 @@ const HomeScreenWrapper = styled.View`
   background-color: white;
 `;
 
-export const HomeComponent = () => {
+export const HomeComponent = ({ navigation }) => {
   return (
     <>
     <HomeScreenWrapper>
-
     <SafeAreaView>
       <HomeFlatlistWrapper>
-        <FlatList 
-          data={[{name: 1}]}
-          renderItem={() => {
-            return (
-              <>
-                <CardComponent />
-                <Spacer />
-              </>
-            )
-          }}
-          keyExtractor={(item) => item.name}
-          contentContainerStyle={{ padding: 16 }}
-        />
+        <TouchableOpacity
+          onPress={() => navigation.navigate("ParkingDetail")}
+        >
+          <FlatList 
+            data={[{name: 1}]}
+            renderItem={() => {
+              return (
+                <>
+                  <CardComponent />
+                  <Spacer />
+                </>
+              )
+            }}
+            keyExtractor={(item) => item.name}
+            contentContainerStyle={{ padding: 16 }}
+          />
+        </TouchableOpacity>
         </HomeFlatlistWrapper>
         <BikeWrapper>
           <BikeImage
