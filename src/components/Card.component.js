@@ -27,22 +27,22 @@ const Title = styled.Text`
   text-align: center;
 `
 
+let data = AsyncStorgate.getItem('photo-uri');
 
 export const CardComponent = () => {
-  let data = AsyncStorgate.getItem('photo-uri');
-  const [photoUri, setPhotoUri] = useState(null);
-  {data && setPhotoUri(data._w)}
+  let trackChange = AsyncStorgate.getItem('photo-uri');
+  const [uri, setUri] = useState(data._W);
 
   useEffect(() => {
-    setPhotoUri(data._W);
-  }, [data]);
+    setUri(data._W);
+  }, [trackChange._W]);
 
   return (
     <InfoCard elevation={5}>
       <View>
         <InfoCardCover
           key="parking-location"
-          source={{ uri: photoUri }}
+          source={{ uri: uri }}
         />
       </View>
       <Info>
