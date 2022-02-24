@@ -14,7 +14,7 @@ const Title = styled.Text`
 `;
 
 const Map = styled(MapView)`
-  height: 400px;
+  height: 40%;
 `;
 
 const ShutBar = styled(View)`
@@ -45,8 +45,7 @@ const ButtonContainer = styled.View`
   padding: 20px;
   width: 300px;
   height: 100%;
-  margin-top: 50px;
-  margin-left: 10px;s
+  margin-left: 10px;
 `;
 
 const Spacer = styled.View`

@@ -9,7 +9,7 @@ const Spacer = styled.View`
 `;
 
 const HomeFlatlistWrapper = styled.View`
-  height: 450px;
+  height: 300px;
 `;
 
 const BikeImage = styled(Image)`
@@ -34,6 +34,7 @@ const HomeScreenWrapper = styled.View`
 `;
 
 const IconWrapper = styled.View`
+  position: absolute;
   height: 60px;
   width: 60px;
   border-radius: 40px;
@@ -42,7 +43,7 @@ const IconWrapper = styled.View`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-left: 310px;
+  right: 10px;
   margin-top: 100px;
 `;
 
@@ -60,7 +61,7 @@ export const HomeComponent = ({ navigation }) => {
                     <TouchableOpacity
                       onPress={() => navigation.navigate("ParkingDetail")}
                     >
-                      <CardComponent imgUri="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png" />
+                      <CardComponent/>
                       <Spacer />
                     </TouchableOpacity>
                   </>

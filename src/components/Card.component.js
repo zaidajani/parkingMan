@@ -1,7 +1,8 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 import { Card } from "react-native-paper";
 import { Text, View } from "react-native";
 import styled from "styled-components";
+import AsyncStorgate from "@react-native-async-storage/async-storage";
 
 const InfoCard = styled(Card)`
   background-color: white;
@@ -26,19 +27,26 @@ const Title = styled.Text`
   text-align: center;
 `
 
-export const CardComponent = ({ imgUri }) => {
+
+export const CardComponent = () => {
+  let data = AsyncStorgate.getItem('photo-uri');
+  const [photoUri, setPhotoUri] = useState(null);
+  {data && setPhotoUri(data._w)}
+
+  useEffect(() => {
+    setPhotoUri(data._W);
+  }, [data]);
+
   return (
     <InfoCard elevation={5}>
       <View>
         <InfoCardCover
           key="parking-location"
-          source={{ uri: imgUri }}
+          source={{ uri: photoUri }}
         />
       </View>
       <Info>
-        <Title>
-          Your current parking
-        </Title>
+        <Title>Your current parking location</Title>
       </Info>
     </InfoCard>
   );
